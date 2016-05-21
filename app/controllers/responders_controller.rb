@@ -11,11 +11,11 @@ class RespondersController < ApplicationController
   end 
   
   def show
-    @responder = Responder.find_by_code!(params[:name])
+    @responder = Responder.find_by_name(params[:name])
   end
 
   def update
-    @responder = Responder.find_by_code!(params[:name])
+    @responder = Responder.find_by_name(params[:name])
       if @responder.update_attributes(responder_params_edit)
         render :show
       end
