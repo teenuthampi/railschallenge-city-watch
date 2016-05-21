@@ -1,0 +1,9 @@
+ <% @emergencies.each do |emergency| %>
+      <tr>
+        <td><%= emergency.code %></td>
+        <td><%= emergency.fire_severity %></td>
+        <td><%= emergency.police_severity %></td>
+        <td><%= emergency.medical_severity %></td> 
+        <td><%= link_to 'Show', emergency %></td>
+      </tr>
+<% end %>
