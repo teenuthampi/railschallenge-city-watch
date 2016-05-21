@@ -1,8 +1,13 @@
 class RespondersController < ApplicationController
 
   def index
-    @responders = Responder.all
-    respond_to :json
+    if params[:show] == 'capacity'
+      Responder.current_capacity
+      render :show
+    else
+      @responders = Responder.all
+      respond_to :json
+    end
   end
   
   def create
